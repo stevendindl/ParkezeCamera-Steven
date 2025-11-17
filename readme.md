@@ -1,4 +1,4 @@
-# YOLOv5 Model trained on Parking Data
+# YOLOv5 Model Trained on Parking Data
 
 ## Usage
 - The model and associated code may be run internally within our organization on our own servers for analytics, monitoring, or research purposes.
@@ -7,11 +7,5 @@
 
 ## Data
 ### Main Datasets
-- PKLot - [HuggingFace Link](https://huggingface.co/datasets/Voxel51/PKLot) - [RoboFlow](https://public.roboflow.com/object-detection/pklot)
+- PKLot - [RoboFlow Link](https://public.roboflow.com/object-detection/pklot)
 - CNRPark+EXT - [Reference Link](http://cnrpark.it/)
-### Secondary Datasets
-- Parking Space Computer Vision Model (and data) - [RoboFlow Link](https://universe.roboflow.com/muhammad-syihab-bdynf/parking-space-ipm1b)
-
-
-## References
-- [text]()

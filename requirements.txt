@@ -1,0 +1,14 @@
+# scraping 
+requests
+beautifulsoup4
+pillow
+
+# model training
+torch
+torchvision
+ultralytics
+numpy
+pandas
+opencv-python
+scikit-learn
+albumentations

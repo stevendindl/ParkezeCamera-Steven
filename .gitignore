@@ -1,0 +1,6 @@
+venv/
+images/
+labels/
+*pt
+*zip
+*tar

@@ -1,0 +1,31 @@
+train: 
+  - ./CNRPark-EXT-YOLO/train/images
+  - ./PKLot.v2-640.yolov5pytorch/train/images
+
+val:
+  - ./CNRPark-EXT.v3i.yolov5pytorch/val/images
+  - ./PKLot.v2-640.yolov5pytorch/val/images
+
+test:
+  - ./CNRPark-EXT.v3i.yolov5pytorch/test/images
+  - ./PKLot.v2-640.yolov5pytorch/test/images
+
+# Number of classes 
+nc: 2
+
+# Class names (standardized)
+# Class 0: unoccupied/empty parking space
+# Class 1: occupied parking space
+names: ['space-empty', 'space-occupied']
+
+# Dataset metadata
+datasets:
+  CNRPark-EXT:
+    license: Open Data Commons Open Database License (ODbL) v1.0.
+    resolution: 1000x750
+
+  PKLot:
+    version: 2
+    format: 640
+    license: CC BY 4.0
+    resolution: 640x640

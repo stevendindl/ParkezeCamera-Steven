@@ -1,6 +1,9 @@
 venv/
 images/
 labels/
+models/
+output-yolo-labels/
+visualize/
 *pt
 *zip
 *tar

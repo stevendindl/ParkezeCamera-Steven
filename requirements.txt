@@ -12,3 +12,4 @@ pandas
 opencv-python
 scikit-learn
 albumentations
+tqdm

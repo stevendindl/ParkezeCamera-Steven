@@ -2,6 +2,12 @@
 from ultralytics import YOLO
 import torch
 import time
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--config', type=str, default=None, help='path to data yaml')
+parser.add_argument('--output', type=str, default='runs/train', help='output dir')
+args = parser.parse_args()
 
 # Load a model
 model = YOLO(model='yolov5su.pt')  
@@ -37,6 +43,8 @@ if device == 'cuda':
 '''
 If overfitting (train loss low, val loss high): increase augmentation
 If underfitting (both high): reduce augmentation or train longer
+Good sign if val loss decreases then plateaus and train loss continues to decrease
+  # 'blur': 0.01,        # failed. not supported in yolov5?
 '''
 config = {
     'data': '../data/data.yaml',
@@ -47,7 +55,8 @@ config = {
     'optimizer': 'SGD',  # Stochastic Gradient Descent (Adam may be simpler, but research uses SGD)
 
     'momentum': 0.937,
-    'lr0': 0.01,           # Learning rate 
+    # 'lr0': 0.01,         # Base learning rate 
+    'lr0': 0.001,          # Updated option for learning reate
     'lrf': 0.01,           # Final LR multiplier
     'weight_decay': 0.0005,  # Regularization 
 
@@ -81,7 +90,6 @@ config = {
     # Advanced
     'mosaic': 1.0,       # Great for variety
     'mixup': 0.1,        # Slight blending for robustness
-    'blur': 0.01,        # Simulate rain/motion
     'close_mosaic': 10,  # Disable mosaic last 10 epochs for stability
     
     # Validation
@@ -89,7 +97,11 @@ config = {
     'plots': True,  # Save plots
     'rect': False,  # Rectangular training (may be faster)
 }
-        
+
+# update config['data'] and output paths from args
+if args.config:
+    config['data'] = args.config
+config['project'] = args.output
 
 # Train the model
 results = model.train(**config)
@@ -107,4 +119,5 @@ print(f"Precision: {metrics.box.mp:.4f}")
 print(f"Recall: {metrics.box.mr:.4f}")
 
 # Save final model
-model.save(f'parkdetect_{time.strftime('%Y-%m-%d')}_{time.strftime('%H-%M')}.pt')
+fname = f"parkdetect_{time.strftime('%Y-%m-%d')}_{time.strftime('%H-%M')}.pt"
+model.save(fname)

@@ -66,10 +66,18 @@ print(slot_id)
 "2016-02-12_0910.jpg"
 
 # print dataset size 
-p1 = "../data/CNRPark-EXT-YOLO/train"
-p2 = "../data/PKLot.v2-640.yolov5pytorch/train"
+tr1 = "../data/CNRPark-EXT-YOLO/train"
+tr2 = "../data/PKLot.v2-640.yolov5pytorch/train"
+
+v1 = "../data/CNRPark-EXT-YOLO/val"
+v2 = "../data/PKLot.v2-640.yolov5pytorch/val"
+
+tt1 = "../data/CNRPark-EXT-YOLO/test"
+tt2 = "../data/PKLot.v2-640.yolov5pytorch/test"
 
 from collections import Counter
+from pathlib import Path
+import glob
 
 def count_files_in_folder(folder_path):
     total_files = 0
@@ -84,5 +92,11 @@ def count_files_in_folder(folder_path):
         print(f'  {ext}: {count}')
     return total_files
 
-count_files_in_folder(p1)
-count_files_in_folder(p2)
+count_files_in_folder(tr1)
+count_files_in_folder(tr2)
+
+count_files_in_folder(v1)
+count_files_in_folder(v2)
+
+count_files_in_folder(tt1)
+count_files_in_folder(tt2)

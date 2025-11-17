@@ -30,10 +30,13 @@ This work uses data from the following open datasets:
    - License: Open Data Commons Open Database License (ODbL) v1.0
    - Source: http://cnrpark.it/
    - License text: https://opendatacommons.org/licenses/odbl/1-0/
+   - Amato, Giuseppe and Carrara, Fabio and Falchi, Fabrizio and Gennaro, Claudio and Meghini, Carlo and Vairo, Claudio, Deep learning for decentralized parking lot occupancy detection, Expert Systems with Applications, 72:327-334, 2017.
 
 2. PKLot Dataset
    - License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+   - Source: https://public.roboflow.com/object-detection/pklot
    - License text: https://creativecommons.org/licenses/by/4.0/
+   - Almeida, P., Oliveira, L. S., Silva Jr, E., Britto Jr, A., Koerich, A., PKLot – A robust dataset for parking lot classification, Expert Systems with Applications, 42(11):4937-4949, 2015.
 
 These datasets are used for research and training purposes. Users of this
 project must comply with the respective dataset licenses when using or

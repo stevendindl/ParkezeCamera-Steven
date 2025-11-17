@@ -65,3 +65,24 @@ print(slot_id)
 
 "2016-02-12_0910.jpg"
 
+# print dataset size 
+p1 = "../data/CNRPark-EXT-YOLO/train"
+p2 = "../data/PKLot.v2-640.yolov5pytorch/train"
+
+from collections import Counter
+
+def count_files_in_folder(folder_path):
+    total_files = 0
+    file_types = Counter()
+    for root, dirs, files in os.walk(folder_path):
+        total_files += len(files)
+        for file in files:
+            ext = Path(file).suffix
+            file_types[ext] += 1
+    print(f'File types in {folder_path}:')
+    for ext, count in file_types.items():
+        print(f'  {ext}: {count}')
+    return total_files
+
+count_files_in_folder(p1)
+count_files_in_folder(p2)

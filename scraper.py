@@ -32,7 +32,7 @@ for cam_num in range(1, 5):
             img = img.transpose(Image.FLIP_LEFT_RIGHT)
 
         # Save image with timestamp
-        output_path = f"images/{time.strftime('%Y-%m-%d')}_{time.strftime('%H-%M-%S')}_cam{cam_num}_snapshot.jpg"
+        output_path = f"images/cam{cam_num}_{time.strftime('%Y-%m-%d')}_{time.strftime('%H-%M-%S')}.jpg"
         img.save(output_path, "JPEG")
         print(f"Saved {output_path}")
     else:
